@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "151ee263-375a-49ce-aa48-401dbf055895",
+		"name": "Fresher-Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "172.104.190.30:7777/api/v1/users",
+					"host": [
+						"172",
+						"104",
+						"190",
+						"30"
+					],
+					"port": "7777",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "ee21a14a-8845-42aa-a77e-b7f663ca8c25",
+					"name": "Get All Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "172.104.190.30:7777/api/v1/users",
+							"host": [
+								"172",
+								"104",
+								"190",
+								"30"
+							],
+							"port": "7777",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "301",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Nov 2018 10:35:49 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12d-RkCgvQ9ZNb9UGnkgwoON13pBfHM\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding",
+							"name": "Vary",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"message\":\"Users Details fetched Successfully\",\"data\":[{\"is_active\":true,\"_id\":\"5bf291e1d59c5a4517d7905f\",\"name\":\"Allen\",\"email\":\"allen@ideaplunge.com\",\"phone\":\"9940700655\",\"address\":\"Coimbatore\",\"gender\":\"Male\",\"createdAt\":\"2018-11-19T10:35:13.690Z\",\"updatedAt\":\"2018-11-19T10:35:13.690Z\",\"__v\":0}]}"
+				}
+			]
+		},
+		{
+			"name": "Insert New Users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Allen\",\n    \"email\": \"allen@ideaplunge.com\",\n    \"phone\": \"9940700655\",\n    \"address\": \"Coimbatore\",\n    \"gender\": \"Male\"\n}"
+				},
+				"url": {
+					"raw": "172.104.190.30:7777/api/v1/users",
+					"host": [
+						"172",
+						"104",
+						"190",
+						"30"
+					],
+					"port": "7777",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "9a861ede-6999-4f2d-9946-c48f82cc062d",
+					"name": "Insert New Users",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Allen\",\n    \"email\": \"allen@ideaplunge.com\",\n    \"phone\": \"9940700655\",\n    \"address\": \"Coimbatore\",\n    \"gender\": \"Male\"\n}"
+						},
+						"url": {
+							"raw": "172.104.190.30:7777/api/v1/users",
+							"host": [
+								"172",
+								"104",
+								"190",
+								"30"
+							],
+							"port": "7777",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Nov 2018 10:35:13 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-1E8dpcMcTBPutwclud6crdbEGBA\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding",
+							"name": "Vary",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"message\":\"Users Created Successfully\",\"data\":{\"is_active\":true,\"_id\":\"5bf291e1d59c5a4517d7905f\",\"name\":\"Allen\",\"email\":\"allen@ideaplunge.com\",\"phone\":\"9940700655\",\"address\":\"Coimbatore\",\"gender\":\"Male\",\"createdAt\":\"2018-11-19T10:35:13.690Z\",\"updatedAt\":\"2018-11-19T10:35:13.690Z\",\"__v\":0}}"
+				}
+			]
+		},
+		{
+			"name": "Get Individual User by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "172.104.190.30:7777/api/v1/users/5bf291e1d59c5a4517d7905f",
+					"host": [
+						"172",
+						"104",
+						"190",
+						"30"
+					],
+					"port": "7777",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"5bf291e1d59c5a4517d7905f"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c15ea699-1bde-4ad6-8d85-e4ef9d61fd01",
+					"name": "Get Individual User by Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "172.104.190.30:7777/api/v1/users/5bf291e1d59c5a4517d7905f",
+							"host": [
+								"172",
+								"104",
+								"190",
+								"30"
+							],
+							"port": "7777",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5bf291e1d59c5a4517d7905f"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "299",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Nov 2018 10:36:53 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12b-6UouCq0tlx8ZCV8K/0vawKU+5ak\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding",
+							"name": "Vary",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"message\":\"Users Details fetched Successfully\",\"data\":{\"is_active\":true,\"_id\":\"5bf291e1d59c5a4517d7905f\",\"name\":\"Allen\",\"email\":\"allen@ideaplunge.com\",\"phone\":\"9940700655\",\"address\":\"Coimbatore\",\"gender\":\"Male\",\"createdAt\":\"2018-11-19T10:35:13.690Z\",\"updatedAt\":\"2018-11-19T10:35:13.690Z\",\"__v\":0}}"
+				}
+			]
+		},
+		{
+			"name": "Update Individual User by Id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Allen Emanuel\",\n    \"email\": \"allen@ideaplunge.com\",\n    \"phone\": \"9940700655\",\n    \"address\": \"Coimbatore\",\n    \"gender\": \"Male\"\n}"
+				},
+				"url": {
+					"raw": "172.104.190.30:7777/api/v1/users/5bf291e1d59c5a4517d7905f",
+					"host": [
+						"172",
+						"104",
+						"190",
+						"30"
+					],
+					"port": "7777",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"5bf291e1d59c5a4517d7905f"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "08d5dcd7-588e-4ff5-86db-0087e71de04e",
+					"name": "Update Individual User by Id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Allen Emanuel\",\n    \"email\": \"allen@ideaplunge.com\",\n    \"phone\": \"9940700655\",\n    \"address\": \"Coimbatore\",\n    \"gender\": \"Male\"\n}"
+						},
+						"url": {
+							"raw": "172.104.190.30:7777/api/v1/users/5bf291e1d59c5a4517d7905f",
+							"host": [
+								"172",
+								"104",
+								"190",
+								"30"
+							],
+							"port": "7777",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5bf291e1d59c5a4517d7905f"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Nov 2018 10:39:49 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-IDbTRQIYeJqwmoySkohtGPYDLVA\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding",
+							"name": "Vary",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"message\":\"Users updated\"}"
+				}
+			]
+		},
+		{
+			"name": "Delete Individual User by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Allen Emanuel\",\n    \"email\": \"allen@ideaplunge.com\",\n    \"phone\": \"9940700655\",\n    \"address\": \"Coimbatore\",\n    \"gender\": \"Male\"\n}"
+				},
+				"url": {
+					"raw": "172.104.190.30:7777/api/v1/users/5bf291e1d59c5a4517d7905f",
+					"host": [
+						"172",
+						"104",
+						"190",
+						"30"
+					],
+					"port": "7777",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"5bf291e1d59c5a4517d7905f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
