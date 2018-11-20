@@ -12,14 +12,18 @@ $(document).ready(function(){
           
           success: function(getdata) {
  	     //Write your code here
-          $.each(getdata,function(i,data){
-              $.each( data,function(key,value)
-                  {
-                    $getdata.append(key+': '+value);
-                  }
-              );
-       
-          });
+          
+                    
+      var data=getdata.data;
+      var name=data.map(x=>x.name);
+      var email=data.map(x=>x.email);
+      var phone=data.map(x=>x.phone);
+      var address=data.map(x=>x.address);
+      var gender=data.map(x=>x.gender);
+    
+            $getdata.append('name:'+name+' , email :'+email+' ,phone :'+phone+' ,address : '+address+' , gender : '+gender);
+            
+        
           },
 
    });
