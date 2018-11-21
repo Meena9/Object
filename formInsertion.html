@@ -38,13 +38,14 @@ $.ajax({
           url:'HTTP://172.104.190.30:7777/api/v1/users',
           type: 'POST',
           data:myObje,
+          dataType:'JSON',
         
           
           success: function(result) {
  	     //Write your code here
           console.log("suceess");
           $('input[type="text"], textarea').val('');
-         
+          alert("success");
           },
           error:function(result) {console.log("error");}
 });
@@ -143,7 +144,7 @@ input[type=submit]:hover {
                    
                   </select>
               
-                  <a href='first.html' > <input type="button" id="submit" value="Submit"></a>
+                   <input type="button" id="submit" value="Submit">
                   <a href='first.html' > <input type="button" value="cancel"></a>
                 </form>
         
