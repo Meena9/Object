@@ -33,7 +33,7 @@ th {
     $(document).ready(function(){
 
 
-var myid='';
+
 
 var $getdata=$('#getM');
 $.ajax({
@@ -44,7 +44,7 @@ $.ajax({
        success: function(getdata) {
        //Write your code here
       var mytable= '';
-                 
+            console.log("success");     
    var data=getdata.data;
    var id=data.map(x=>x._id);
    var name=data.map(x=>x.name);
@@ -52,58 +52,63 @@ $.ajax({
    var phone=data.map(x=>x.phone);
    var address=data.map(x=>x.address);
    var gender=data.map(x=>x.gender);
-   
+var a;
  for(var i=0;i<name.length;i++){
      mytable+='<tr>';
-            mytable+='<td>'+id[i]+'</td>';
+             mytable+='<td>'+id[i]+'</td>';
              mytable+='<td>'+name[i]+'</td>';
              mytable+='<td>'+email[i]+'</td>';
              mytable+='<td>'+phone[i]+'</td>';
              mytable+='<td>'+address[i]+'</td>';
              mytable+='<td>'+gender[i]+'</td>';
-             mytable+='<td>'+'<a href="Object.html"><img src="editicon.png" height="20px" width="20px" id="edit"></a>'+'</td>';
-             mytable+='<td>'+  '<img src="delete_icon.png"  height="20px" width="20px"  id="delete">'+'</td>';
+             mytable+='<td>'+'<img src="editicon.png" height="20px" width="20px" id="edit">'+'</td>';
+             mytable+='<td>'+  '<img src="delete_icon.png"  height="20px" width="20px" class="delete" id='+id[i]+' >'+'</td>';
 
              mytable+='</tr>';
     
-     myid=id[i];
     
-     $getdata.append(mytable);
-
-
+    
+     
  }
+ $getdata.append(mytable);
+ 
+ $('.delete').click(function(){
+var myid=this.id;
+console.log(myid);
+
+var url_="HTTP://172.104.190.30:7777/api/v1/users/"+myid;
+console.log(url_)
+$.ajax({
+          url:url_,
+          type: 'DELETE',
+          dataType:'JSON',
+        
+          
+          success: function(result) {
+ 	     //Write your code here
+          alert("suceess DELETE");
+          window.location.href="first.html";
+         
+          },
+          error:function(result) {console.log("error");}
+    });
+});
+ 
+ 
+     
+       },
+
+});
 
 
-$('#delete').click(function() {
-           
-           console.log("my id"+myid);
-                      $.ajax({
-                          
-                       url:'HTTP://172.104.190.30:7777/api/v1/users/myid',
-                       
-                          type: 'DELETE',
-                          success: function(result) {
-                              // Do something with the result
-                              console.log('delete success fully');
-                          }
-                             
-                      });
-                              });  
  
 
 
-
-       },
-
-
-       
-
 });
 
 
 
-        
-});
+
 
 </script>
  <center><h2> Get method</h2></center><br>
@@ -111,15 +116,15 @@ $('#delete').click(function() {
  <a href='formInsertion.html' ><input type="button" id="add" value="add"></a><br>
 
 <table border="1" id="getM">
-    <tr>
-            <th>id</th>
+    <tr>    
+             <th>id</th>
             <th>name</th>
             <th>email</th>
             <th>phone</th>
-<th>address</th>
-<th>gender</th>
-<th>Edit</th>
-<th>Delete</th>
+            <th>address</th>
+            <th>gender</th>
+            <th>Edit</th>
+            <th>Delete</th>
 
     </tr>
    
